@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "447554380732",
+    "project_id": "laka-vn",
+    "storage_bucket": "laka-vn.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:447554380732:android:9eb9e7ee325a850f6601b9",
+        "android_client_info": {
+          "package_name": "vn.com.laka.mobile"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "447554380732-04q48qe7v17rpdod3jf18od2mjan9pq6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAM0VX0VWhGlCe4IFghBOlvlD_AvL65agE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "447554380732-04q48qe7v17rpdod3jf18od2mjan9pq6.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "447554380732-4uf2his59unba4tp6remb0o1ufs2naj1.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.tggtlaka"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,2673 @@
+{
+	"info": {
+		"_postman_id": "40f5ec1e-be0e-4595-8a60-ed464f921e41",
+		"name": "LAKA-DEV",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"fullName\": \"Nguyễn Văn A\",\n    \"phone\": \"0932120429\",\n    \"referralBy\": \"FXcKehmkpw\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiUrl}}/auth/register",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "register otp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"phone\": \"0932120429\",\n    \"code\": \"1111\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiUrl}}/auth/verify-register-otp",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"auth",
+								"verify-register-otp"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"phone\": \"0912345678\",\n    \"password\": \"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiUrl}}/auth/login",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login otp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"phone\": \"0968084689\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiUrl}}/auth/login-otp",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"auth",
+								"login-otp"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "verify login otp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"phone\": \"0968084689\",\n    \"code\": \"1111\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiUrl}}/auth/verify-login-otp",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"auth",
+								"verify-login-otp"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "category",
+			"item": [
+				{
+					"name": "list vendors - DEPRECATED",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/categories/:cat/vendors",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"categories",
+								":cat",
+								"vendors"
+							],
+							"variable": [
+								{
+									"key": "cat",
+									"value": "MASSAGE"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/categories",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"categories"
+							],
+							"query": [
+								{
+									"key": "cat",
+									"value": "",
+									"description": "KARAOKE, BAR, ",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "attribute",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Television\",\n    \"value\": \"\",\n    \"image\": \"/cdn/images/icons/television.png\",\n    \"type\": \"general\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiUrl}}/attributes",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"attributes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/attributes",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"attributes"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "vendor",
+			"item": [
+				{
+					"name": "products",
+					"item": [
+						{
+							"name": "media",
+							"item": [
+								{
+									"name": "resigned url to upload image Copy",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"fileType\": \"jpg\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{apiUrl}}/vendors/products/:id/s3-url",
+											"host": [
+												"{{apiUrl}}"
+											],
+											"path": [
+												"vendors",
+												"products",
+												":id",
+												"s3-url"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "61bb01f05a7502aecaae10eb"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "upload thumbnail",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"image\": \"https://laka-storage-vn.hn.ss.bfcplatform.vn/data/images/karaoke4.jpg\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{apiUrl}}/vendors/products/:id/thumbnail",
+											"host": [
+												"{{apiUrl}}"
+											],
+											"path": [
+												"vendors",
+												"products",
+												":id",
+												"thumbnail"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "61bc4d809ae90b536fe27633"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "upload gallery",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"images\": [\n        \"https://laka-storage-vn.hn.ss.bfcplatform.vn/data/images/138331471_2802401210027841_149311284930372372_n.jpeg\",\n        \"https://laka-storage-vn.hn.ss.bfcplatform.vn/data/images/138851671_2802401106694518_7183381310780880036_n.jpeg\",\n        \"https://laka-storage-vn.hn.ss.bfcplatform.vn/data/images/138853658_2802401183361177_4793314031637113511_n.jpeg\",\n        \"https://laka-storage-vn.hn.ss.bfcplatform.vn/data/images/139020981_2802401130027849_6853477256664192863_n.jpeg\",\n        \"https://laka-storage-vn.hn.ss.bfcplatform.vn/data/images/139618603_2802401246694504_1255944458150627063_n.jpeg\"\n    ]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{apiUrl}}/vendors/products/:id/gallery",
+											"host": [
+												"{{apiUrl}}"
+											],
+											"path": [
+												"vendors",
+												"products",
+												":id",
+												"gallery"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "61bb01f05a7502aecaae10eb"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "create",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Phòng lớn\",\n    \"details\": \"\",\n    \"price\": 650000,\n    \"quantity\": 10,\n    \"attributes\": [\n        {\n            \"name\": \"Bục biểu diễn\",\n            \"description\": \"Có\",\n            \"priority\": 0,\n            \"type\": \"text\"\n        },\n        {\n            \"name\": \"Sức chứa\",\n            \"description\": \"30-35 người/phòng\",\n            \"priority\": 0,\n            \"type\": \"text\"\n        },\n        {\n            \"name\": \"DJ\",\n            \"description\": \"\",\n            \"priority\": 0,\n            \"type\": \"option\",\n            \"cost\": 800000\n        },\n        {\n            \"name\": \"Private Party\",\n            \"description\": \"\",\n            \"priority\": 0,\n            \"type\": \"option\",\n            \"cost\": 1500000\n        },\n        {\n            \"name\": \"Nhân viên phục vụ riêng biệt\",\n            \"description\": \"\",\n            \"priority\": 0,\n            \"type\": \"option\",\n            \"cost\": 900000\n        },\n        {\n            \"name\": \"Tiệc sinh nhật\",\n            \"description\": \"\",\n            \"priority\": 0,\n            \"type\": \"option\",\n            \"cost\": 1200000\n        }\n    ],\n    \"active\": true,\n    \"status\": \"published\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{apiUrl}}/vendors/products",
+									"host": [
+										"{{apiUrl}}"
+									],
+									"path": [
+										"vendors",
+										"products"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update product",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"attributes\": [\n        {\n            \"cost\": 0,\n            \"_id\": \"619b446787424246089a848a\",\n            \"name\": \"Parking\",\n            \"description\": \"\",\n            \"image\": \"https://laka-storage-vn.hn.ss.bfcplatform.vn/assets/images/parking.png\",\n            \"priority\": 0,\n            \"type\": \"general\"\n        }\n    ],\n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{apiUrl}}/vendors/products/:id",
+									"host": [
+										"{{apiUrl}}"
+									],
+									"path": [
+										"vendors",
+										"products",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "61bb01f05a7502aecaae10eb"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "list orders by product id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{apiUrl}}/vendors/products/:id",
+									"host": [
+										"{{apiUrl}}"
+									],
+									"path": [
+										"vendors",
+										"products",
+										":id"
+									],
+									"query": [
+										{
+											"key": "startDate",
+											"value": "2021-12-02",
+											"disabled": true
+										},
+										{
+											"key": "endDate",
+											"value": "",
+											"disabled": true
+										},
+										{
+											"key": "limit",
+											"value": "5",
+											"disabled": true
+										},
+										{
+											"key": "page",
+											"value": "1",
+											"disabled": true
+										}
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "61a877cb803dc23ea3496cb9"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "list products",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{apiUrl}}/vendors/products/?limit=2&page=1&active=1&status=published",
+									"host": [
+										"{{apiUrl}}"
+									],
+									"path": [
+										"vendors",
+										"products",
+										""
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "2"
+										},
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "active",
+											"value": "1"
+										},
+										{
+											"key": "status",
+											"value": "published",
+											"description": "published, draft, hidden"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get details",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{apiUrl}}/vendors/products/:id",
+									"host": [
+										"{{apiUrl}}"
+									],
+									"path": [
+										"vendors",
+										"products",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "61bc4d809ae90b536fe27633"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "orders",
+					"item": [
+						{
+							"name": "list orders",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{apiUrl}}/vendors/orders",
+									"host": [
+										"{{apiUrl}}"
+									],
+									"path": [
+										"vendors",
+										"orders"
+									],
+									"query": [
+										{
+											"key": "status",
+											"value": "checked-in",
+											"description": "pending,canceled,confirmed,complete",
+											"disabled": true
+										},
+										{
+											"key": "startDate",
+											"value": "2021-12-06",
+											"disabled": true
+										},
+										{
+											"key": "endDate",
+											"value": "2021-12-08",
+											"disabled": true
+										},
+										{
+											"key": "limit",
+											"value": "5",
+											"disabled": true
+										},
+										{
+											"key": "page",
+											"value": "1",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get details",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{apiUrl}}/vendors/orders/:id",
+									"host": [
+										"{{apiUrl}}"
+									],
+									"path": [
+										"vendors",
+										"orders",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "61bbf6483c9a4fb9be4c2442"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update order",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"status\": \"confirmed\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{apiUrl}}/vendors/orders/:id?lng=vi",
+									"host": [
+										"{{apiUrl}}"
+									],
+									"path": [
+										"vendors",
+										"orders",
+										":id"
+									],
+									"query": [
+										{
+											"key": "lng",
+											"value": "vi"
+										}
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "61e25c579b5ec86454be13ac"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "order receipt complete",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"images\": [\n        \"https://laka-storage-vn.hn.ss.bfcplatform.vn/data/images/109363362_591205974930209_619770533378097706_n.jpg\"\n    ],\n    \"totalPrice\": 100000,\n    \"finalPrice\": 10000\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{apiUrl}}/vendors/orders/:id/receipts",
+									"host": [
+										"{{apiUrl}}"
+									],
+									"path": [
+										"vendors",
+										"orders",
+										":id",
+										"receipts"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "61e23ae04f053999a715e96f"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "verify QR Code",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"orderId\": \"7E2Z8KV60I\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{apiUrl}}/vendors/orders/qr-verify",
+									"host": [
+										"{{apiUrl}}"
+									],
+									"path": [
+										"vendors",
+										"orders",
+										"qr-verify"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "s3 receipts",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"fileType\": \"jpg\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{apiUrl}}/vendors/orders/s3-receipts",
+									"host": [
+										"{{apiUrl}}"
+									],
+									"path": [
+										"vendors",
+										"orders",
+										"s3-receipts"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "media",
+					"item": [
+						{
+							"name": "upload gallery - NOT READY",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"images\": [\n        \"https://laka-storage-vn.hn.ss.bfcplatform.vn/data/images/118534579_102156261631066_273006389015189057_n.jpeg\",\n        \"https://laka-storage-vn.hn.ss.bfcplatform.vn/data/images/118554029_102156321631060_1851313449189600560_n.jpeg\",\n        \"https://laka-storage-vn.hn.ss.bfcplatform.vn/data/images/118574892_102156191631073_1772555869132056740_n.jpeg\",\n        \"https://laka-storage-vn.hn.ss.bfcplatform.vn/data/images/118588044_102156368297722_3476008723089299874_n.jpeg\",\n        \"https://laka-storage-vn.hn.ss.bfcplatform.vn/data/images/118634932_102156071631085_2107351126511599735_n.jpeg\",\n        \"https://laka-storage-vn.hn.ss.bfcplatform.vn/data/images/118652330_102156091631083_8809921864620126164_n.jpeg\",\n        \"https://laka-storage-vn.hn.ss.bfcplatform.vn/data/images/118653219_102156008297758_2363521203316519830_n.jpeg\",\n        \"https://laka-storage-vn.hn.ss.bfcplatform.vn/data/images/118696541_102156041631088_8892932674938043699_n.jpeg\",\n        \"https://laka-storage-vn.hn.ss.bfcplatform.vn/data/images/118702780_102156171631075_580920760442678675_n.jpeg\",\n        \"https://laka-storage-vn.hn.ss.bfcplatform.vn/data/images/118776552_102156398297719_5143448446454668305_n.jpeg\",\n        \"https://laka-storage-vn.hn.ss.bfcplatform.vn/data/images/118812567_102156361631056_944952643660748483_n.jpeg\"\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{apiUrl}}/vendors/gallery",
+									"host": [
+										"{{apiUrl}}"
+									],
+									"path": [
+										"vendors",
+										"gallery"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "upload thumbnail",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"image\": \"https://laka-storage-vn.hn.ss.bfcplatform.vn/data/images/karaoke2.jpg\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{apiUrl}}/vendors/thumbnail",
+									"host": [
+										"{{apiUrl}}"
+									],
+									"path": [
+										"vendors",
+										"thumbnail"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "resigned url to upload image",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"fileType\": \"jpg\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{apiUrl}}/vendors/upload/s3-url",
+									"host": [
+										"{{apiUrl}}"
+									],
+									"path": [
+										"vendors",
+										"upload",
+										"s3-url"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "dashboard",
+					"item": [
+						{
+							"name": "dashboard",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{apiUrl}}/vendors/dashboard",
+									"host": [
+										"{{apiUrl}}"
+									],
+									"path": [
+										"vendors",
+										"dashboard"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "reviews",
+					"item": [
+						{
+							"name": "reply review",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"content\": \"Cảm ơn bạn đã sử dụng dịch vụ của chúng tôi\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{apiUrl}}/vendors/reviews/:id/response",
+									"host": [
+										"{{apiUrl}}"
+									],
+									"path": [
+										"vendors",
+										"reviews",
+										":id",
+										"response"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "61c150cab46b2ba1e82e10f0"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "list reviews",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{apiUrl}}/vendors/reviews?limit=10&page=1&type=content",
+									"host": [
+										"{{apiUrl}}"
+									],
+									"path": [
+										"vendors",
+										"reviews"
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "10"
+										},
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "customerId",
+											"value": "",
+											"disabled": true
+										},
+										{
+											"key": "type",
+											"value": "content",
+											"description": "all, media, content, star_1, star_2, star_3, star_4, star_5"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "overview",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{apiUrl}}/vendors/reviews/overview",
+									"host": [
+										"{{apiUrl}}"
+									],
+									"path": [
+										"vendors",
+										"reviews",
+										"overview"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "New Request",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "vouchers",
+					"item": [
+						{
+							"name": "list vouchers",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{apiUrl}}/vendors/vouchers?limit=10&page=1",
+									"host": [
+										"{{apiUrl}}"
+									],
+									"path": [
+										"vendors",
+										"vouchers"
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "10",
+											"description": "paginate"
+										},
+										{
+											"key": "page",
+											"value": "1",
+											"description": "paginate"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "create voucher",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\": \"ten chuong trinh\",\n    \"code\": \"KARA22\",\n    \"discountAmount\": 5,\n    \"discountType\": \"percentage\",\n    \"minBasketPrice\": 50000,\n    \"usageLimitQuantity\": 1000,\n    \"maxVoucherAmount\": 5000,\n    \"startDate\": \"thoi gian\",\n    \"endDate\": \"thoi gian\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{apiUrl}}/vendors/vouchers",
+									"host": [
+										"{{apiUrl}}"
+									],
+									"path": [
+										"vendors",
+										"vouchers"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/vendors/:id",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"vendors",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "61bc4bb11e75bec32f52b211"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "details Copy",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/vendors/get-new/:id",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"vendors",
+								"get-new",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "61bc4bb11e75bec32f52b211"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list reviews",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/vendors/:id/reviews?limit=10&page=1",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"vendors",
+								":id",
+								"reviews"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "61bc4bb11e75bec32f52b211"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "main search with filter",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/vendors/?cat=KARAOKE&limit=20&page=1",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"vendors",
+								""
+							],
+							"query": [
+								{
+									"key": "cat",
+									"value": "KARAOKE"
+								},
+								{
+									"key": "attributes",
+									"value": "619b440087424246089a8484,619b444187424246089a8486",
+									"disabled": true
+								},
+								{
+									"key": "t",
+									"value": "Neko",
+									"disabled": true
+								},
+								{
+									"key": "lng",
+									"value": "105.77349668484847",
+									"disabled": true
+								},
+								{
+									"key": "lat",
+									"value": "21.032187472053906",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "20"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search vendor new",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/vendors/search?cats=KARAOKE&limit=20&page=1&minPrice=0&maxPrice=500000",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"vendors",
+								"search"
+							],
+							"query": [
+								{
+									"key": "cats",
+									"value": "KARAOKE"
+								},
+								{
+									"key": "attributes",
+									"value": "619b440087424246089a8484,619b444187424246089a8486",
+									"disabled": true
+								},
+								{
+									"key": "t",
+									"value": "Quang",
+									"disabled": true
+								},
+								{
+									"key": "lng",
+									"value": "105.77349668484847",
+									"disabled": true
+								},
+								{
+									"key": "lat",
+									"value": "21.032187472053906",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "20"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "minPrice",
+									"value": "0"
+								},
+								{
+									"key": "maxPrice",
+									"value": "500000"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list attributes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/vendors/attributes",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"vendors",
+								"attributes"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "order",
+			"item": [
+				{
+					"name": "order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"productId\": \"61bc4d809ae90b536fe27633\",\n    \"totalPeople\": 1,\n    \"note\": \"\",\n    \"orderAt\": \"2022-01-28\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiUrl}}/orders",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "details order",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/orders/:id",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"orders",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "61cbcb807d04cd391736908c"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cancel order",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/orders/:id/cancel",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"orders",
+								":id",
+								"cancel"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "61bb047d31c41aaf3d6b8b08"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list orders",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/orders?limit=10&page=1&cat=KARAOKE",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"orders"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "pending",
+									"disabled": true
+								},
+								{
+									"key": "startDate",
+									"value": "2021-12-02 00:00:00.000",
+									"disabled": true
+								},
+								{
+									"key": "endDate",
+									"value": "2021-12-07 09:19:27.081525",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "cat",
+									"value": "KARAOKE"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pre order calcualte",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"productId\": \"61bd6e0124a6bfa5b48a1519\",\n    \"totalPeople\": 1,\n    \"note\": \"\",\n    \"orderAt\": \"2022-01-29\",\n    \"options\": [\n        {\n            \"_id\": \"61bd6e0124a6bfa5b48a151d\",\n            \"amount\": 2\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiUrl}}/orders/pre-calc?lng=en",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"orders",
+								"pre-calc"
+							],
+							"query": [
+								{
+									"key": "lng",
+									"value": "en"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add review if order completed",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"content\": \"Ổn đấy 2\",\n    \"rating\": 4\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiUrl}}/orders/:id/reviews",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"orders",
+								":id",
+								"reviews"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "61e14f4b4f053999a715dca8"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "reviews",
+			"item": [
+				{
+					"name": "add review if order completed",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"content\": \"Ổn đấy 2\",\n    \"rating\": 4\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiUrl}}/orders/:id/reviews",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"orders",
+								":id",
+								"reviews"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "621c9be5d5f03c807eefe832"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create - DEPRECATED",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"content\": \"Ổn đấy 2\",\n    \"vendor\": \"61bc4bb11e75bec32f52b211\",\n    \"rating\": 4\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiUrl}}/reviews",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"reviews"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "s3 url",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"fileType\": \"jpg\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiUrl}}/reviews/s3-url",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"reviews",
+								"s3-url"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "products",
+			"item": [
+				{
+					"name": "list options",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/products/:id/options",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"products",
+								":id",
+								"options"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "61bc4d809ae90b536fe27633"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "account",
+			"item": [
+				{
+					"name": "me",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/accounts/me",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"accounts",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add device",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"deviceToken\": \"\",\n    \"deviceType\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiUrl}}/accounts/devices",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"accounts",
+								"devices"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/accounts/logout",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"accounts",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "reward info",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/accounts/rewards",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"accounts",
+								"rewards"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "forgotpass",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"phone\": \"0912345678\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiUrl}}/accounts/password/recovery",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"accounts",
+								"password",
+								"recovery"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "verify recovery password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"phone\": \"0912345678\",\n    \"code\": \"1111\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiUrl}}/accounts/password/verify-recovery",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"accounts",
+								"password",
+								"verify-recovery"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "change password",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"password\": \"newpassword\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiUrl}}/accounts/password",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"accounts",
+								"password"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "profile",
+			"item": [
+				{
+					"name": "upload avatar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"avatar\": \"https://laka-storage-vn.hn.ss.bfcplatform.vn/assets/images/default-avatar-1.jpg\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiUrl}}/profile/avatar",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"profile",
+								"avatar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "resigned url to upload image",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"fileType\": \"jpg\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiUrl}}/profile/avatar/s3-url",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"profile",
+								"avatar",
+								"s3-url"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update profile",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"nguyenvana@gmail.com\",\n    \"fullName\": \"Nguyễn Văn A\",\n    \"dateOfBirth\": \"1990-01-01\",\n    \"biography\": \"Mô tả về tôi\",\n    \"gender\": \"male\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiUrl}}/profile/",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"profile",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update vendor profile",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"brandName\": \"Brand name\",\n    \"details\": \"details\",\n    \"lat\": 89.0,\n    \"lng\": 120.0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiUrl}}/profile/vendor",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"profile",
+								"vendor"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "complete",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/profile/complete",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"profile",
+								"complete"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "goong",
+			"item": [
+				{
+					"name": "latt lng",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://rsapi.goong.io/Geocode?latlng=21.035010559818073, 105.76163841586234&api_key={{goongToken}}",
+							"protocol": "https",
+							"host": [
+								"rsapi",
+								"goong",
+								"io"
+							],
+							"path": [
+								"Geocode"
+							],
+							"query": [
+								{
+									"key": "latlng",
+									"value": "21.035010559818073, 105.76163841586234"
+								},
+								{
+									"key": "api_key",
+									"value": "{{goongToken}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "apply vendor for customer",
+			"item": [
+				{
+					"name": "get list attributes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/vendors/apply/attributes?category=KARAOKE",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"vendors",
+								"apply",
+								"attributes"
+							],
+							"query": [
+								{
+									"key": "category",
+									"value": "KARAOKE"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "vendor apply",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"details\": \"Sau 9 năm hoạt động, Kingdom sở hữu chuỗi hệ thống giải trí gồm Karaoke – Nhà hàng – Beer Club – Pub đều tọa lạc tại các tuyến đường chính và khu vực trung tâm thành phố, Kingdom nhanh chóng trở thành thương hiệu hàng đầu về giải trí – ẩm thực được người dân Sài Gòn ưu tiên lựa chọn.\",\n    \"category\": \"KARAOKE\",\n    \"brandName\": \"Karaoke 123\",\n    \"fullAddress\": \"107 Nguyễn Phong Sắc, Cầu Giấy, Hà Nội\",\n    \"attributes\": [\"619b440087424246089a8484\"],\n    \"gallery\": [],\n    \"lat\": 21.034741209609948,\n    \"lng\": 105.80419121916078\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiUrl}}/vendors",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"vendors"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "notifications",
+			"item": [
+				{
+					"name": "list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/notifications?limit=50",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"notifications"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "50",
+									"description": "limit for paginate"
+								},
+								{
+									"key": "page",
+									"value": "1",
+									"description": "page for paginate",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "read notification",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/notifications/read?readAll=1",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"notifications",
+								"read"
+							],
+							"query": [
+								{
+									"key": "readAll",
+									"value": "1",
+									"description": "1 hoặc 0. 1 để đọc tất cả notification"
+								},
+								{
+									"key": "id",
+									"value": null,
+									"description": "id cua tung notification neu muon doc rieng",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "chat",
+			"item": [
+				{
+					"name": "get recent conversations",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/chat/?limit=10&page=1",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"chat",
+								""
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get messages by room",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/chat/:id?limit=10&page=1",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"chat",
+								":id"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "10",
+									"description": "paginate"
+								},
+								{
+									"key": "page",
+									"value": "1",
+									"description": "paginate"
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "61ce7daf514d5c84217cb8a8"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create message",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"content\": \"22\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiUrl}}/chat/:id",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"chat",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "61e7804db75282126c66e640"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "newfeed",
+			"item": [
+				{
+					"name": "reactions",
+					"item": [
+						{
+							"name": "list reaction by post",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{apiUrl}}/posts/:id/reactions",
+									"host": [
+										"{{apiUrl}}"
+									],
+									"path": [
+										"posts",
+										":id",
+										"reactions"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "61cacb591ed79d7fc21fe86b"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "add reaction to post",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"type\": \"love\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{apiUrl}}/posts/:id/reactions",
+									"host": [
+										"{{apiUrl}}"
+									],
+									"path": [
+										"posts",
+										":id",
+										"reactions"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "61cacb591ed79d7fc21fe86b"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "comments",
+					"item": [
+						{
+							"name": "add comment to post",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"content\": \"Comment 8\",\n    \"media\": []\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{apiUrl}}/posts/:id/comments/",
+									"host": [
+										"{{apiUrl}}"
+									],
+									"path": [
+										"posts",
+										":id",
+										"comments",
+										""
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "61cbd8bc5c53fb2f418c296e"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "list comments",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{apiUrl}}/posts/:id/comments/?limit=20&page=1&commentLimit=5",
+									"host": [
+										"{{apiUrl}}"
+									],
+									"path": [
+										"posts",
+										":id",
+										"comments",
+										""
+									],
+									"query": [
+										{
+											"key": "parentId",
+											"value": "",
+											"description": "Để lấy danh sách comment con của 1 comment nào đó",
+											"disabled": true
+										},
+										{
+											"key": "limit",
+											"value": "20",
+											"description": "paginate"
+										},
+										{
+											"key": "page",
+											"value": "1",
+											"description": "paginate"
+										},
+										{
+											"key": "commentLimit",
+											"value": "5",
+											"description": "Giới hạn danh sách comment level 2"
+										}
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "61cacb591ed79d7fc21fe86b"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "list newfeed",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/posts?limit=10&page=1",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"posts"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "10",
+									"description": "paginate"
+								},
+								{
+									"key": "page",
+									"value": "1",
+									"description": "paginate"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"content\": \"Ổn đấy\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiUrl}}/posts",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get reisnged url for upload media - s3",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"fileType\": \"mp4\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiUrl}}/posts/s3-url/",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"posts",
+								"s3-url",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "details by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/posts/:id/?parentComment=5&childComment=3",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"posts",
+								":id",
+								""
+							],
+							"query": [
+								{
+									"key": "parentComment",
+									"value": "5",
+									"description": "Giới hạn số lượng comment muốn hiển thị ra ở màn details"
+								},
+								{
+									"key": "childComment",
+									"value": "3",
+									"description": "Giới hạn số lượng comment level 2 muốn hiển thị ra ở màn details"
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "61cacb591ed79d7fc21fe86b"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Location",
+			"item": [
+				{
+					"name": "get provinces",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/locations/provinces",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"locations",
+								"provinces"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get districts by province code",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/locations/provinces/:id/districts",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"locations",
+								"provinces",
+								":id",
+								"districts"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "01"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get wards by district code",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/locations/districts/:id/wards",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"locations",
+								"districts",
+								":id",
+								"wards"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "001"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get provinces by vendors",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/locations/provinces-vendor",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"locations",
+								"provinces-vendor"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "affiliate",
+			"item": [
+				{
+					"name": "affiliates",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/affiliates",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"affiliates"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "rewards",
+			"item": [
+				{
+					"name": "reward history",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/reward/history?type&limit=10&page=1",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"reward",
+								"history"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": null,
+									"description": "(add, minus) không điền gì thì sẽ lấy all"
+								},
+								{
+									"key": "limit",
+									"value": "10",
+									"description": "paginate"
+								},
+								{
+									"key": "page",
+									"value": "1",
+									"description": "paginate"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "vouchers",
+			"item": [
+				{
+					"name": "list vouchers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/vouchers?type=vendor&limit=10&page=1",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"vouchers"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "vendor",
+									"description": "vendor, system"
+								},
+								{
+									"key": "vendorId",
+									"value": null,
+									"description": "vendor id",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "10",
+									"description": "paginate option"
+								},
+								{
+									"key": "page",
+									"value": "1",
+									"description": "paginate option"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "use voucher for order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/vouchers/:id?orderId=61cbcb807d04cd391736908c",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"vouchers",
+								":id"
+							],
+							"query": [
+								{
+									"key": "orderId",
+									"value": "61cbcb807d04cd391736908c",
+									"description": "id order"
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "61cbcb807d04cd391736908c",
+									"description": "id voucher"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxYmM0YmIxMWU3NWJlYzMyZjUyYjIwZiIsImlhdCI6MTY0NjE5NzUzNiwiZXhwIjoxNjc3NzMzNTM2fQ.CYjAx828dQx5-W7YFf3pTjYh3aP7mk3cywDyqX4YGpM",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "apiUrl",
+			"value": "https://dev.lakaserver.com/api"
+		},
+		{
+			"key": "goongToken",
+			"value": "WOADCdyjqOIQY5wbWEOSzheKqqxuaevo8uTP0I3y"
+		}
+	]
+}

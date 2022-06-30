@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="28px" height="28px" viewBox="0 0 28 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Group 2</title>
+    <g id="Listing-App-Designs" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="detail---Restaurant" transform="translate(-20.000000, -288.000000)">
+            <g id="Group-2" transform="translate(20.000000, 288.000000)">
+                <circle id="bg" fill="#D63447" cx="14" cy="14" r="14"></circle>
+                <g id="mdi:silverware" transform="translate(1.000000, 0.000000)">
+                    <rect id="ViewBox" x="0" y="0" width="26" height="26"></rect>
+                    <path d="M9.89230214,14.2649995 L6.82491581,11.0418136 C5.68303996,9.83559989 5.68303996,7.88361771 6.82491581,6.677404 L11.964069,12.0750837 L9.89230214,14.2649995 M14.8557578,12.8693137 L13.7796104,14.0028265 L18.8162734,19.3079745 L17.7840503,20.3952215 L12.7473873,15.0900734 L7.71072427,20.3952215 L6.67850118,19.3079745 L13.8235348,11.7820668 C13.3037628,10.6022883 13.6697994,8.94442948 14.8337956,7.71838509 C16.2320553,6.23787865 18.2379356,5.96028369 19.3067624,7.08608546 C20.3829098,8.2195982 20.1193635,10.3324043 18.7137831,11.8051997 C17.5497869,13.0312441 15.9758297,13.4167927 14.8557578,12.8693137 Z" id="Shape" fill="#FFFFFF" fill-rule="nonzero"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

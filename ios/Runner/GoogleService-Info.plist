@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>447554380732-7cboqc8lkvgrj53vp8hjos0riembdj64.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.447554380732-7cboqc8lkvgrj53vp8hjos0riembdj64</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>447554380732-mil7ndpksjmboqi3vsr7nmkjou8v9p8d.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCSDs43iiPK_mkqFca8UpIDPcXMEzaYctg</string>
+	<key>GCM_SENDER_ID</key>
+	<string>447554380732</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>vn.com.laka.mobile</string>
+	<key>PROJECT_ID</key>
+	<string>laka-vn</string>
+	<key>STORAGE_BUCKET</key>
+	<string>laka-vn.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:447554380732:ios:f9ae46186870944e6601b9</string>
+</dict>
+</plist>
